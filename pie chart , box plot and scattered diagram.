@@ -1,0 +1,49 @@
+1. Pie chart
+#Simple Pie Chart
+slices <- c(20,20,30, 30)
+
+#slices has the values for the size
+label <- c("INDIA", "US", "DUBAI", "FRANCE")
+
+#label here is the label
+pie(slices, labels = label, main = "Pie Chart of Countries")
+
+
+2. Pie chart with Percentage
+#Pie Chart with Percentages
+
+slices<-c(20, 20,30, 30)
+
+label <- c("INDIA", "US", "DUBAI", "FRANCE")
+
+pct <-round(slices/sum(slices)*100)
+
+label <- paste(label, pct)
+
+# add percentage to label
+label <- paste(label,"%",sep = "")
+
+#add % to labels
+
+pie(slices,labels = label,col = rainbow(length(label)),main = "Pie Chart of Countries")
+
+
+3. box plot
+# Adjust plot margins
+par(mar = c(4, 4, 2, 1))  # Adjusting the margins (bottom, left, top, right)
+
+# Load the mtcars dataset
+data(mtcars)
+
+# Create a boxplot of mpg by car cylinders
+boxplot(mpg ~ cyl, data = mtcars, 
+        main = "Car Mileage Data", 
+        xlab = "Number of Cylinders", 
+        ylab = "Miles Per Gallon")
+
+
+4. Scattered diagram
+attach(mtcars)
+plot(wt, mpg, main = "Scatterplot Example", xlab = "Car Weight", ylab = "Miles Per Gallon", pch = 19)
+
+
