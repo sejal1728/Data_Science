@@ -1,0 +1,10 @@
+#simple plot by considering in built data set mtcars
+attach(mtcars)
+plot(wt,mpg)
+#plot is the function and wt and mpg are the attribute available 
+#in mt cars data set
+
+abline(lm(mpg~wt))
+#abline is used to draw line on plot and mpg(~) versus wt
+
+title("Regression of MPG on Weight")
