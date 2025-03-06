@@ -1,0 +1,37 @@
+View(mtcars)
+model1 <- glm(formula = vs ~ mpg, data = mtcars, family = "binomial")  
+summary(model1)
+
+
+predict(model1, data.frame(mpg = 20), type = "response")
+predict(model1, data.frame(mpg = c(20:30)), type = "response")
+
+
+model2 <- glm(formula = vs ~ hp, data = mtcars, family = "binomial")  
+summary(model2)
+
+
+predict(model2, data.frame(hp = 150), type = "response")
+predict(model2, data.frame(hp = c(150, 100, 50)), type = "response")
+
+model3 <- glm(formula = vs ~ hp + mpg, data = mtcars, family = "binomial") 
+summary(model3)
+
+#Display AIC of models
+AIC(model1)
+AIC(model2)
+AIC(model3)
+
+
+
+Explanation:
+This model considers both horsepower and miles per gallon as predictors.
+If probability ≥ 0.5, predict 'Straight engine' (vs = 1).
+If probability < 0.5, predict 'V-shaped engine' (vs = 0).
+
+The model with the lowest AIC (Akaike Information Criterion) value is generally considered the best model for prediction.
+In your case:
+•	Model 1: AIC = 29.53334
+•	Model 2: AIC = 20.83758
+•	Model 3: AIC = 22.80297
+Since Model 2 has the lowest AIC value, it is the best model for prediction among the three.
