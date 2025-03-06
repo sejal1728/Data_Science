@@ -1,0 +1,43 @@
+#1. Simple Linear Regression.
+
+#Example: Predicting the exam marks based on the hours of study
+
+# Dataset
+height <- c(102, 117, 105, 141, 135, 115, 138, 144, 137, 100, 131, 119, 115, 121, 113)
+weight <- c(61, 46, 62, 54, 60, 69, 51, 50, 46, 64, 48, 56, 64, 48, 59)
+
+# Linear regression model
+student <- lm(weight ~ height)
+student
+
+# To predict for a new height (e.g., height = 199)
+prediction <- predict(student, data.frame(height=199), interval="confidence")
+print(prediction)
+
+# Plot diagnostic plots for the linear model
+plot(student)
+
+#2. Simple And Multiple Linear Regression.
+
+
+#Example :predict a car’s fuel efficiency (miles per gallon, mpg) based on its weight (wt)
+#and horsepower (hp) using the built-in mtcars dataset available in the R environment.
+
+Code:
+  data(mtcars) # Load the built-in mtcars dataset
+head(mtcars) # View the first few rows of the dataset
+summary(mtcars) # Summary statistics
+
+# Fit a multiple linear regression model
+model <- lm(mpg ~ wt + hp, data = mtcars)
+
+summary(model) # View the model summary
+
+# Create new data for prediction
+new_data <- data.frame(wt = c(3, 2.5), hp = c(110, 150))
+
+# Predict values based on the new data
+predictions <- predict(model, newdata = new_data)
+print(predictions)
+
+plot(predictions, col="red", pch=8, main="Predictions from the Model", xlab="Index", ylab="Predicted MPG")
