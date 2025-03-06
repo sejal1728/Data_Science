@@ -1,0 +1,36 @@
+1. Histogram
+# Load the mtcars dataset (it is built-in in R)
+data(mtcars$mpg)
+
+# Create a histogram of the 'mpg' column with 20 bins and green bars
+hist(mtcars$mpg, breaks = 20, col = "green", 
+     main = "Histogram of Miles Per Gallon (mpg)", 
+     xlab = "Miles Per Gallon (mpg)", 
+     ylab = "Frequency")
+
+
+2. Line plot
+#Line plot
+#create some data in x
+# Set up the plotting window to have 2 rows and 4 columns
+par(mfrow = c(2, 4))
+
+# Define the options for different types of plots
+opts <- c("p", "l", "b", "o", "h", "s", "n")
+
+# Define x and y data for plotting
+x <- 1:3
+y <- (1:3)^2
+
+# Loop through each plot type and create a corresponding plot
+for(i in 1:length(opts)) {
+  # Create a main heading for each plot
+  heading <- paste("type =", opts[i])
+  
+  # Create an empty plot with no points or lines, but with a title
+  plot(x, y, type = "n", main = heading, xlab = "X-axis", ylab = "Y-axis")
+  
+  # Add the line plot depending on the specified type
+  lines(x, y, type = opts[i], col = "darkblue", pch = 22)
+}
+
