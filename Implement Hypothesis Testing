@@ -1,0 +1,56 @@
+1. One Sample T-Testing
+Use: Compares the mean of a sample to a known value or population mean.
+
+# Defining sample vector
+x <- rnorm(100)
+
+# One Sample T-Test
+t.test(x, mu = 5)
+
+2. Two Sample T-Testing
+Use: Compares the means of two independent samples to determine if they are significantly different.
+
+# Defining sample vectors
+x <- rnorm(100)
+y <- rnorm(100)
+
+# Two Sample T-Test
+t.test(x, y)
+
+3. Directional Hypothesis
+Use: Tests whether the sample mean is greater or smaller than a known population mean in a specified direction.
+
+# Defining sample vector
+x <- rnorm(100)
+
+# Directional hypothesis testing
+t.test(x, mu = 2, alternative = 'greater')
+
+4. One Sample μ-Test
+Use: Non-parametric test to compare the median of a sample to a known value.
+
+# Define vector
+x <- rnorm(100)
+
+# One sample test
+wilcox.test(x, exact = FALSE)
+
+5. Two Sample μ-Test
+Use: Non-parametric test to compare the medians of two independent samples.
+
+# Define vectors
+x <- rnorm(100)
+y <- rnorm(100)
+
+# Two sample test
+wilcox.test(x, y)
+
+6. Correlation Test
+Use: Tests the strength and direction of the linear relationship between two variables.
+
+# Using mtcars dataset in R
+cor.test(mtcars$mpg, mtcars$hp)
+
+
+
+
