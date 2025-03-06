@@ -1,0 +1,16 @@
+library(ggplot2)
+
+data("iris")
+
+X <- iris[,1:4]
+
+pca_result <- prcomp(X,center= TRUE , scale. = TRUE)
+print(pca_result)
+
+biplot(pca_result,main="biplot of Iris PCA Data")
+
+pca_data <- data.frame(pca_result$x , Species = iris$Species)
+ggplot(pca_data, aes(x= PC1 , y= PC2,color=Species))+geom_point()+
+  labs(title = "PCA data points of iris" , x="principle componets 1", y="principle componets 2")
+
+screeplot(pca_result,main = "scree plot" , col= "red")
