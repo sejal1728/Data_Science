@@ -1,0 +1,16 @@
+#one way ANOVA 
+# Load the dataset
+data1 <- read.csv(file.choose(), sep = ",", header = TRUE)
+
+names(data1)
+
+names(data1)
+
+summary(data1)
+
+head(data1)
+
+anv <- aov(satindex ~ dept, data = data1)
+     
+# Output the ANOVA summary
+summary(anv)
